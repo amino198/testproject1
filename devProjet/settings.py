@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-zaxcpw)(j&)tjm%+1+c4ay4ec@h5i(v(=d$h5stheldx%b+75=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -134,6 +134,6 @@ INTERNAL_IPS = [
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['testproject1-2.onrender.com','localhost', '127.0.0.1']
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
