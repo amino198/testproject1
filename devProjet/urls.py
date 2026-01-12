@@ -24,8 +24,3 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')), # 認証用URL
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns = [
-        path('__debug__/', include(debug_toolbar.urls)),
-    ] + urlpatterns
