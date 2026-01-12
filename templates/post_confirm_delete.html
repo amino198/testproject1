@@ -1,0 +1,12 @@
+
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="alert alert-danger">
+    <p>「{{ post.content }}」を本当に削除しますか？</p>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">はい、削除します</button>
+    <a href="{% url 'post_detail' post.pk %}" class="btn btn-secondary">キャンセル</a>
+</form>
+{% endblock %}

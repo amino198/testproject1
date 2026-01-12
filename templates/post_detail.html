@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header">投稿詳細</div>
+    <div class="card-body">
+        <h5 class="card-title">{{ post.author.username }}</h5>
+        <p class="card-text">{{ post.content|linebreaksbr }}</p>
+        <p class="text-muted">{{ post.created_at }}</p>
+        
+        {% if user == post.author %}
+            <a href="{% url 'post_edit' post.pk %}" class="btn btn-success">編集</a>
+            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">削除</a>
+        {% endif %}
+        <a href="{% url 'timeline' %}" class="btn btn-secondary">戻る</a>
+    </div>
+</div>
+{% endblock %}

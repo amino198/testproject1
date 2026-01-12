@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}ユーザー登録 | My SNS{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                ユーザー登録
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {# Djangoのフォームを段落形式で表示 #}
+                    {{ form.as_p }}
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary">登録する</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-muted text-center">
+                すでにアカウントをお持ちですか？ <a href="{% url 'login' %}">ログインはこちら</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
